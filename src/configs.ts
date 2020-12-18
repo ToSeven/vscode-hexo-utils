@@ -28,12 +28,14 @@ function getConfig<T>(propName: ConfigProperties, section = 'hexo'): T {
 
 const configs = {
   get hexoRoot() {
-    const folders = workspace.workspaceFolders;
-    if (folders) {
-      return path.join(folders[0].uri.fsPath, getConfig<string>(ConfigProperties.hexoRoot)!);
-    }
+    // const folders = workspace.workspaceFolders;
+    // if (folders) {
+    //   // return path.join(folders[0].uri.fsPath, getConfig<string>(ConfigProperties.hexoRoot)!);
+    // }
 
-    return undefined;
+    // return undefined;
+
+    return path.join(getConfig<string>(ConfigProperties.hexoRoot));
   },
   paths: {
     get scaffold() {
